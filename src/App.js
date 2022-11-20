@@ -11,8 +11,8 @@ const style = {
   container: `max-w-[500px] w-full m-auto rounded shadow-xl my-16 p-4 py-8 bg-[#14213d] `,
   heading: `text-4xl font-bold text-center text-[#fca311] p-2 mb-6`,
   form: `flex justify-between`,
-  input: `p-2 pl-4 w-full text-xl bg-white text-[#000000] rounded outline-none text-white`,
-  button: `p-2 ml-2 text-[#ffffff]`,
+  input: `p-2 pl-4 w-full text-xl bg-white text-black rounded outline-none text-white`,
+  button: `p-2 ml-2 text-white`,
   count: `text-center p-2 text-white`,
   socials: `cursor-pointer flex justify-center items-center pt-7 space-x-8 text-2xl text-[#ffffff]`,
 }
