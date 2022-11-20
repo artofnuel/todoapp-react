@@ -1,17 +1,20 @@
 import { collection, onSnapshot, query, QuerySnapshot, updateDoc, doc, addDoc, deleteDoc } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react'
-import { TiPlusOutline } from 'react-icons/ti'
+import { BsGithub, BsLinkedin, BsPlusSquare, BsTwitter } from 'react-icons/bs'
+import { MdOutlineComputer } from 'react-icons/md'
 import Todo from './components/Todo';
 import { db } from './firebase';
+import Fade from 'react-reveal/Fade';
 
 const style = {
-  bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#2F80ED] to-[#1CB5E0]`,
-  container: `bg-slate-100 max-w-[500px] w-full m-auto rounded shadow-xl p-4`,
-  heading: `text-3xl font-bold text-center text-gray-800 p-2`,
+  bg: `w-full h-full flex justify-center items-center p-4 bg-[#000000]`,
+  container: `max-w-[500px] w-full m-auto rounded shadow-xl my-16 p-4 py-8 bg-[#14213d] `,
+  heading: `text-4xl font-bold text-center text-[#fca311] p-2 mb-6`,
   form: `flex justify-between`,
-  input: `border p-2 w-full text-xl`,
-  button: `border p-2 ml-2 bg-blue-600 text-slate-100`,
-  count: `text-center p-2`
+  input: `p-2 pl-4 w-full text-xl bg-white text-[#000000] rounded outline-none text-white`,
+  button: `p-2 ml-2 text-[#ffffff]`,
+  count: `text-center p-2 text-white`,
+  socials: `cursor-pointer flex justify-center items-center pt-7 space-x-8 text-2xl text-[#ffffff]`,
 }
 
 function App() {
@@ -62,10 +65,10 @@ function App() {
   return (
     <div className={style.bg}>
       <div className={style.container}>
-        <h3 className={style.heading}>Todo App</h3>
+        <h3 className={style.heading}>My Todo List</h3>
         <form onSubmit={createTodo} className={style.form}>
           <input value={input} onChange={(e) => setInput(e.target.value)} className={style.input} type="text" placeholder='Add todo' />
-          <button className={style.button}><TiPlusOutline size={30} /></button>
+          <button className={style.button}><BsPlusSquare size={30} /></button>
         </form>
         <ul>
           {todos.map((todo, index) => (
@@ -73,9 +76,17 @@ function App() {
           ))}
         </ul>
         {todos.length < 1 ? null :
-          <p className={style.count}>{`You have ${todos.length} todos`}</p>
+          todos.length === 1 ? <p className={style.count}>{`You have ${todos.length} todo`}</p>
+            : <p className={style.count}>{`You have ${todos.length} todos`}</p>
         }
-
+        <Fade bottom cascade>
+          <div className={style.socials}>
+            <a href="https://github.com/artofnuel"><BsGithub /></a>
+            <a href="https://aon-portfolio.vercel.app/"><MdOutlineComputer /></a>
+            <a href="https://www.linkedin.com/in/emmanuelinua"><BsLinkedin /></a>
+            <a href="https://twitter.com/artofnuel"><BsTwitter /></a>
+          </div>
+        </Fade>
       </div>
     </div>
   );

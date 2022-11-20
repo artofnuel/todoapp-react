@@ -2,12 +2,12 @@ import React from 'react'
 import { FaRegTrashAlt } from 'react-icons/fa'
 
 const style = {
-    li: `flex justify-between bg-slate-200 p-4 my-2 capitalize`,
-    licomplete: `flex justify-between bg-slate-400 p-4 my-2 capitalize`,
-    row: `flex`,
-    text: `ml-2 cursor-pointer`,
-    textcomplete: `ml-2 cursor-pointer line-through`,
-    button: `cursor-pointer flex items-center`
+    li: `flex justify-between items-center bg-[#000000] p-4 my-2 capitalize rounded text-white`,
+    licomplete: `flex justify-between items-center bg-white p-4 my-2 capitalize rounded text-[#000000]`,
+    row: `flex items-center justify-start w-full h-full`,
+    text: `m-2 cursor-pointer text-white`,
+    textcomplete: `m-2 cursor-pointer line-through`,
+    button: `cursor-pointer flex items-center `
 
 }
 
